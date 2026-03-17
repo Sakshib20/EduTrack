@@ -1,39 +1,20 @@
-# 🎓 EduTrack
+# DirectLink: Real-Time Network Communication System
 
-**EduTrack** is a backend class management system developed using **Java** and **Spring Boot**. It provides robust RESTful APIs for managing academic batches, utilizing **MongoDB** for efficient NoSQL storage.
+## Project Overview
+DirectLink is a Java-based networking application that facilitates real-time communication between distributed nodes. The project demonstrates core **System Integration** principles by managing low-level TCP/IP socket connections and data stream synchronization.
 
-The application follows a strict **layered architecture** (Controller-Service-Repository) to ensure separation of concerns and maintainability.
+## Networking Architecture
+The application is built on a **Client-Server model** utilizing the following networking concepts:
+* **Socket Integration:** Established persistent TCP connections using `java.net`.
+* **Port Management:** Configured dedicated server-side ports to listen for incoming client handshakes.
+* **Multi-threading:** Integrated concurrent thread management to handle multiple simultaneous client connections without system degradation.
 
-## 🛠️ Tech Stack
+## Key Features
+- **Bidirectional Data Streaming:** Reliable packet delivery via TCP/IP protocols.
+- **Protocol Management:** Standardized messaging format for consistent data exchange between client and server.
+- **Resource Optimization:** Efficient socket lifecycle management to prevent memory leaks and port exhaustion.
 
-* **Language:** Java
-* **Framework:** Spring Boot
-* **Database:** MongoDB
-* **Testing Client:** Postman
-* **Build Tool:** Maven
-
-## 🚀 Key Features
-
-* **RESTful API Design:** Standardized endpoints for accessing resources.
-* **Layered Architecture:** Clean separation of logic:
-  * `Controller`: Handles HTTP requests.
-  * `Service`: Contains business logic.
-  * `Repository`: Manages database interactions.
-* **NoSQL Integration:** Scalable data storage using MongoDB.
-
-## 🔌 API Endpoints
-
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| `GET` | `/batches` | Retrieve all batch entries |
-| `POST` | `/batches` | Create a new batch entry |
-| `PUT` | `/batches/id/{id}` | Update a batch (Name/Fees) by ID |
-| `DELETE` | `/batches/id/{id}` | Delete a batch by ID |
-
-### 📝 Sample Request Body (JSON)
-Use this format for **POST** and **PUT** requests:
-```json
-{
-    "name": "PPA",
-    "fees": "18000"
-}
+## Technical Stack
+- **Language:** Java
+- **Networking:** Java Sockets (TCP/IP)
+- **Concurrency:** Java Multi-threading API
