@@ -1,20 +1,38 @@
-# DirectLink: Real-Time Network Communication System
+# 🎓 EduTrack: System Architecture
 
-## Project Overview
-DirectLink is a Java-based networking application that facilitates real-time communication between distributed nodes. The project demonstrates core **System Integration** principles by managing low-level TCP/IP socket connections and data stream synchronization.
+**EduTrack** is an **integrated backend system** developed using **Java** and **Spring Boot**. It provides robust RESTful APIs for **orchestrating** academic data workflows, utilizing **MongoDB** for high-performance NoSQL data engineering.
 
-## Networking Architecture
-The application is built on a **Client-Server model** utilizing the following networking concepts:
-* **Socket Integration:** Established persistent TCP connections using `java.net`.
-* **Port Management:** Configured dedicated server-side ports to listen for incoming client handshakes.
-* **Multi-threading:** Integrated concurrent thread management to handle multiple simultaneous client connections without system degradation.
+The application follows a strict **layered architecture** (Controller-Service-Repository) to ensure modular system integration and maintainability.
 
-## Key Features
-- **Bidirectional Data Streaming:** Reliable packet delivery via TCP/IP protocols.
-- **Protocol Management:** Standardized messaging format for consistent data exchange between client and server.
-- **Resource Optimization:** Efficient socket lifecycle management to prevent memory leaks and port exhaustion.
+## 🛠️ Tech Stack
 
-## Technical Stack
-- **Language:** Java
-- **Networking:** Java Sockets (TCP/IP)
-- **Concurrency:** Java Multi-threading API
+* **Language:** Java
+* **Framework:** Spring Boot
+* **Data Integration:** MongoDB (NoSQL)
+* **Testing Client:** Postman
+* **Build Tool:** Maven
+
+## 🚀 Key Features
+
+* **RESTful Service Orchestration:** Standardized endpoints for seamless system communication.
+* **Layered Architecture:** Clean separation of system logic:
+  * `Controller`: Manages request routing.
+  * `Service`: Handles business logic integration.
+  * `Repository`: Manages data persistence layers.
+* **NoSQL Data Engineering:** Scalable data management using MongoDB.
+
+## 🔌 System Endpoints
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `GET` | `/batches` | Synchronize and retrieve all records |
+| `POST` | `/batches` | Initialize a new system entry |
+| `PUT` | `/batches/id/{id}` | Update record states by ID |
+| `DELETE` | `/batches/id/{id}` | Terminate a record by ID |
+
+### 📝 Sample Request Body (JSON)
+```json
+{
+    "name": "PPA",
+    "fees": "18000"
+}
